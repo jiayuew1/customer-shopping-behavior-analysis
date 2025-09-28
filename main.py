@@ -350,7 +350,7 @@ class CustomerShoppingAnalyzer:
         axes[1,1].set_title('Top 10 Color Preferences')
         axes[1,1].set_ylabel('Count')
         axes[1,1].tick_params(axis='x', rotation=45)
-        
+        plt.subplots_adjust(left=0.05, top=0.78, bottom = 0.2, hspace=0.5)
         plt.tight_layout()
         plt.show()
     def create_us_map_visualization(self):
@@ -661,7 +661,7 @@ class CustomerShoppingAnalyzer:
         axes[1,1].set_yticklabels(axes[1,1].get_yticklabels(), rotation=45)
         
         # Adjust spacing to prevent overlap
-        plt.subplots_adjust(hspace=0.35, wspace=0.3, top=0.93, bottom=0.1)
+        plt.subplots_adjust(hspace=0.35, wspace=0.3, top=0.88, bottom=0.1)
         plt.show()
         
     def purchase_behavior_pca_analysis(self):

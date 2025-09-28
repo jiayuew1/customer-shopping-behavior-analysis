@@ -104,9 +104,7 @@ This analysis provides actionable insights for:
 - A/B testing framework for marketing strategies
 
 ## Author
-[Your Name] - Data Analyst
-- Specialized in customer analytics and business intelligence
-- [LinkedIn Profile] | [Portfolio Website]
+Jiayue Wang 
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.

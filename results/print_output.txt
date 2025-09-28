@@ -1,0 +1,255 @@
+CUSTOMER SHOPPING BEHAVIOR & PRODUCT PERFORMANCE ANALYSIS
+======================================================================
+Dataset: 3,900 customer records with 18 detailed attributes
+Objective: Extract Business Insights for Product & Marketing Strategy
+======================================================================
+Dataset shape: (3900, 18)
+Columns: ['Customer ID', 'Age', 'Gender', 'Item Purchased', 'Category', 'Purchase Amount (USD)', 'Location', 'Size', 'Color', 'Season', 'Review Rating', 'Subscription Status', 'Shipping Type', 'Discount Applied', 'Promo Code Used', 'Previous Purchases', 'Payment Method', 'Frequency of Purchases']
+
+============================================================
+DATA QUALITY & BUSINESS OVERVIEW
+============================================================
+DATASET SUMMARY:
+Total Records: 3,900
+Total Columns: 18
+Memory Usage: 2.80 MB
+
+SAMPLE DATA:
+   Customer ID  Age Gender  ... Previous Purchases Payment Method  Frequency of Purchases
+0            1   55   Male  ...                 14          Venmo             Fortnightly
+1            2   19   Male  ...                  2           Cash             Fortnightly
+2            3   50   Male  ...                 23    Credit Card                  Weekly
+3            4   21   Male  ...                 49         PayPal                  Weekly
+4            5   45   Male  ...                 31         PayPal                Annually
+
+[5 rows x 18 columns]
+
+DATA TYPES:
+Customer ID                 int64
+Age                         int64
+Gender                     object
+Item Purchased             object
+Category                   object
+Purchase Amount (USD)       int64
+Location                   object
+Size                       object
+Color                      object
+Season                     object
+Review Rating             float64
+Subscription Status        object
+Shipping Type              object
+Discount Applied           object
+Promo Code Used            object
+Previous Purchases          int64
+Payment Method             object
+Frequency of Purchases     object
+dtype: object
+
+MISSING VALUES ANALYSIS:
+No missing values found
+
+NUMERICAL COLUMNS OVERVIEW:
+       Customer ID      Age  Purchase Amount (USD)  Review Rating  Previous Purchases
+count      3900.00  3900.00                3900.00        3900.00             3900.00
+mean       1950.50    44.07                  59.76           3.75               25.35
+std        1125.98    15.21                  23.69           0.72               14.45
+min           1.00    18.00                  20.00           2.50                1.00
+25%         975.75    31.00                  39.00           3.10               13.00
+50%        1950.50    44.00                  60.00           3.70               25.00
+75%        2925.25    57.00                  81.00           4.40               38.00
+max        3900.00    70.00                 100.00           5.00               50.00
+
+CATEGORICAL COLUMNS OVERVIEW:
+   Gender: 2 unique values
+      Values: ['Male', 'Female']
+   Item Purchased: 25 unique values
+   Category: 4 unique values
+      Values: ['Clothing', 'Footwear', 'Outerwear', 'Accessories']
+   Location: 50 unique values
+   Size: 4 unique values
+      Values: ['L', 'S', 'M', 'XL']
+   Color: 25 unique values
+   Season: 4 unique values
+      Values: ['Winter', 'Spring', 'Summer', 'Fall']
+   Subscription Status: 2 unique values
+      Values: ['Yes', 'No']
+   Shipping Type: 6 unique values
+      Values: ['Express', 'Free Shipping', 'Next Day Air', 'Standard', '2-Day Shipping', 'Store Pickup']
+   Discount Applied: 2 unique values
+      Values: ['Yes', 'No']
+   Promo Code Used: 2 unique values
+      Values: ['Yes', 'No']
+   Payment Method: 6 unique values
+      Values: ['Venmo', 'Cash', 'Credit Card', 'PayPal', 'Bank Transfer', 'Debit Card']
+   Frequency of Purchases: 7 unique values
+      Values: ['Fortnightly', 'Weekly', 'Annually', 'Quarterly', 'Bi-Weekly', 'Monthly', 'Every 3 Months']
+
+============================================================
+CUSTOMER DEMOGRAPHICS ANALYSIS
+============================================================
+KEY INSIGHTS:
+  Dominant Age Group: 55+
+  Gender Split: Male 68.0%
+  Average Purchase: $59.76
+  Purchase Range: $20 - $100
+  Average Rating out of 5: 3.75
+
+============================================================
+PRODUCT PERFORMANCE ANALYSIS
+============================================================
+CATEGORY PERFORMANCE METRICS:
+             Order_Count  Total_Revenue  Avg_Order_Value  Avg_Rating
+Category
+Clothing            1737         104264            60.03        3.72
+Accessories         1240          74200            59.84        3.77
+Footwear             599          36093            60.26        3.79
+Outerwear            324          18524            57.17        3.75
+
+SEASONAL PERFORMANCE ANALYSIS:
+        Order_Count  Total_Revenue  Avg_Order_Value
+Season
+Fall            975          60018            61.56
+Spring          999          58679            58.74
+Winter          971          58607            60.36
+Summer          955          55777            58.41
+
+SIZE POPULARITY:
+Size
+M     1755
+L     1053
+S      663
+XL     429
+Name: count, dtype: int64
+
+COLOR PREFERENCES:
+Color
+Olive     177
+Yellow    174
+Silver    173
+Teal      172
+Green     169
+Black     167
+Cyan      166
+Violet    166
+Gray      159
+Maroon    158
+Name: count, dtype: int64
+
+============================================================
+HIGH-VALUE CUSTOMER IDENTIFICATION
+============================================================
+CUSTOMER VALUE SEGMENTATION:
+            Customer_Count  Avg_Purchase  ...  Subscription_Rate  Avg_Value_Score
+Value_Tier                                ...
+Bronze                 977         53.05  ...              24.05            60.28
+Silver                 973         59.38  ...              27.13           112.29
+Gold                   976         59.44  ...              28.59           161.75
+Platinum               974         67.22  ...              28.23           214.91
+
+[4 rows x 8 columns]
+
+PLATINUM CUSTOMER PROFILE:
+Platinum customers: 974 (25.0%)
+Revenue contribution: $65,468.00 (28.1%)
+Average age: 44.5 years
+Gender split: {'Male': 0.69, 'Female': 0.31}
+Top categories: {'Clothing': 420, 'Accessories': 325, 'Footwear': 143}
+Top locations: {'New Mexico': 28, 'Pennsylvania': 27, 'Alabama': 27}
+Subscription rate: 28.2%
+Average rating given: 3.79
+Most common frequency: Every 3 Months
+
+VALUE TIER COMPARISON:
+       Tier  Customer_Percentage  Revenue_Percentage
+0    Bronze                 25.1                22.2
+1    Silver                 24.9                24.8
+2      Gold                 25.0                24.9
+3  Platinum                 25.0                28.1
+
+============================================================
+PURCHASE BEHAVIOR FACTOR ANALYSIS (PCA)
+============================================================
+FEATURE ENGINEERING FOR PCA:
+Features included in PCA: 14
+Samples for analysis: 3900
+
+PCA RESULTS:
+Explained Variance by Component:
+   PC1: 0.217 (21.7%) - Cumulative: 0.217 (21.7%)
+   PC2: 0.116 (11.6%) - Cumulative: 0.334 (33.4%)
+   PC3: 0.090 (9.0%) - Cumulative: 0.424 (42.4%)
+   PC4: 0.080 (8.0%) - Cumulative: 0.504 (50.4%)
+   PC5: 0.075 (7.5%) - Cumulative: 0.579 (57.9%)
+   PC6: 0.074 (7.4%) - Cumulative: 0.654 (65.4%)
+
+FEATURE IMPORTANCE (Top Contributors to Each Component):
+
+Principal Component 1 (explains 21.7% of variance):
+   Discount_Applied: 0.552 (positive influence)
+   Promo_Used: 0.552 (positive influence)
+   Subscription_Yes: 0.464 (positive influence)
+   Gender_Male: 0.417 (positive influence)
+   Previous Purchases: 0.027 (positive influence)
+
+Principal Component 2 (explains 11.6% of variance):
+   Category_Clothing: -0.748 (negative influence)
+   Category_Accessories: 0.637 (positive influence)
+   Category_Footwear: 0.146 (positive influence)
+   Category_Outerwear: 0.083 (positive influence)
+   Review Rating: 0.062 (positive influence)
+
+Principal Component 3 (explains 9.0% of variance):
+   Category_Footwear: 0.783 (positive influence)
+   Category_Accessories: -0.503 (negative influence)
+   Category_Outerwear: 0.261 (positive influence)
+   Category_Clothing: -0.241 (negative influence)
+   Review Rating: 0.061 (positive influence)
+
+BUSINESS INSIGHTS FROM PCA:
+   Key behavioral factors: 2 main components explain 33.4% of variance
+   Most influential factors overall:
+      - Category_Accessories
+      - Category_Clothing
+      - Category_Footwear
+      - Promo_Used
+      - Discount_Applied
+
+============================================================
+STRATEGIC BUSINESS RECOMMENDATIONS
+============================================================
+KEY PERFORMANCE INDICATORS:
+   Total Revenue: $233,081.00
+   Average Order Value: $59.76
+   Total Customers: 3,900
+   Average Customer Rating: 3.75/5.0
+
+STRATEGIC RECOMMENDATIONS:
+   1. PRODUCT STRATEGY:
+      - Focus on Clothing category (highest revenue)
+      - Optimize inventory for Fall season
+      - Expand offerings in high-performing categories
+   2. CUSTOMER TARGETING:
+      - Primary target: 50+ age group (highest revenue)
+      - Develop retention programs for high-value segments
+      - Focus acquisition on similar demographic profiles
+   3. MARKETING OPTIMIZATION:
+      - Current discount usage: 43.0%
+      - Increase discount promotion to drive volume
+      - Subscription rate: 27.0% - room for growth
+   4. PURCHASE FREQUENCY STRATEGY:
+      - Most common frequency: Every 3 Months
+      - Highest revenue frequency: Every 3 Months
+      - Weekly shoppers: 13.8% of customers
+      - Opportunity to convert customers to more frequent shopping
+      - Develop frequency-based loyalty programs
+   5. OPERATIONAL IMPROVEMENTS:
+      - Address product quality (avg rating: 3.75)
+      - Optimize shipping options based on customer preferences
+      - Implement loyalty program for repeat customers
+
+NEXT STEPS:
+   1. Implement customer segmentation strategy
+   2. A/B test marketing campaigns by segment
+   3. Create seasonal inventory planning
+   4. Develop subscription growth initiatives
+   5. Monitor KPIs with automated dashboard
